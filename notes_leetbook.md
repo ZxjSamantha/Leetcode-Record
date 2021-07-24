@@ -11,6 +11,8 @@
 - 插入 
 - 删除 O(N)
 
+---
+
 ex. [寻找数组的中心索引](https://leetcode-cn.com/problems/find-pivot-index/)
 
 将左侧数组之和、数组总和、右侧数组之和抽象为leftSum, total, total-pivot-leftSum. 
@@ -47,4 +49,35 @@ class Solution:
 ### 空间复杂度是多少？ O(1)
 
 ---
+
+[合并区间](https://leetcode-cn.com/problems/merge-intervals/)
+
+```
+class Solution:
+    def merge(self, intervals):
+        intervals.sort(key=lambda x:x[0])
+        merged = []
+        
+        for interval in intervals:
+            if not merged or merged[-1][1] < interval[0]:
+            # 如果结果集最后一个元素的右边界比新加入区间的左边界小，直接加入结果集
+                merged.append(interval)
+            else:
+                merged[-1][1] = max(merged[-1][1], interval[1])
+            # 如果有重合，更新区间右边界
+        return merged
+        
+```
+
+类似题目：
+
+[重叠区间，合并区间，插入区间](https://mp.weixin.qq.com/s/ioUlNa4ZToCrun3qb4y4Ow)
+
+
+怎么比较一个列表中任意两个元素？
+
+### 要比较，先排序！！！
+
+按照左区间排序？右区间排序？
+
 
