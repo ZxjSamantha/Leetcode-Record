@@ -84,6 +84,10 @@ class Solution:
 
 字符串的操作对象是**字符串整体和它的字串**，常用操作有**比较**和**连接**。 
 
+[最长公共前缀](https://leetcode-cn.com/problems/longest-common-prefix/)
+
+
+
 
 
 
