@@ -86,6 +86,22 @@ class Solution:
 
 [最长公共前缀](https://leetcode-cn.com/problems/longest-common-prefix/)
 
+1. **初始化ans！！！**
+
+```
+class Solution:
+    def longestCommonPrefix(self, strs):
+        if not strs:
+            return ""
+            
+        prefix, count = strs[0], len(strs) # 
+        for i in range(1, count):
+            prefix = self.lcp(prefix, strs[i])
+            if not prefix:
+                break
+```
+
+
 
 
 
