@@ -86,7 +86,7 @@ class Solution:
 
 [最长公共前缀](https://leetcode-cn.com/problems/longest-common-prefix/)
 
-1. **初始化ans！！！**
+1. **初始化最终的前缀prefix！！！**
 
 ```
 class Solution:
@@ -99,7 +99,21 @@ class Solution:
             prefix = self.lcp(prefix, strs[i])
             if not prefix:
                 break
+        
+        return prefix
+    
+    def lcp(self, str1, str2):
+        length, index = min(len(str1), len(str2)), 0
+        while index < length and str1[index] == str2[index]:
+            index += 1
+        return str1[:index]
 ```
+---
+
+[最长回文子串](https://leetcode-cn.com/problems/longest-palindromic-substring/)
+
+动态规划：回文子串去掉头尾还是回文子串 `s[i:j]`
+
 
 
 
